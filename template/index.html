@@ -43,12 +43,16 @@
             })
             .then(data => {
                 const messagesDiv = document.getElementById("messages");
-                // Adiciona a mensagem do usuário
-                messagesDiv.innerHTML += `<div class="user-message"><strong>Você:</strong> ${userInput}</div>`;
+                // Adiciona a mensagem do usuário com imagem
+                messagesDiv.innerHTML += `<div class="user-message">
+                    <img src="images/user.png" class="avatar" alt="Usuário"/>
+                    <strong>Você:</strong> ${userInput}</div>`;
                 // Adiciona a resposta do bot
-                messagesDiv.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${data.response}</div>`;
+                messagesDiv.innerHTML += `<div class="bot-message">
+                    <img src="images/bot.jpg" class="avatar" alt="Bot"/>
+                    <strong>Bot:</strong> ${data.response}</div>`;
                 // Limpa o campo de entrada
-                document.getElementById("user-input").value = ""; 
+                document.getElementById("user-input").value = "";
                 // Faz o scroll para a última mensagem
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             })
